@@ -4,7 +4,6 @@ import "./globals.css";
 import { SEO } from "../seo.config";
 import Script from "next/script";
 import Loader from "./components/ui/Loader";
-import ChatIcon from "./components/ui/ChatIcon";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 

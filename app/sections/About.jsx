@@ -65,9 +65,11 @@ const AboutSection = () => {
         {/* Animated Text Content */}
         <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-[-0.04em] text-[#667185]">
           {fadeInWords("At HCL, we specialize in crafting")}
-          
+          <span className="font-[600] text-black font-nohemi tracking-tight">
+            {" "}
             next-gen web experiences
-          {fadeInWords("that blend creativity with cutting-edge technology.")}
+          </span>
+          {fadeInWords(" that blend creativity with cutting-edge technology.")}
         </p>
 
         <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-[-0.04em] text-[#667185]">

@@ -2,32 +2,26 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
-import "swiper/css/autoplay";
 
 const Carousel = ({ images }) => {
-  const slidesPerView = Math.min(images.length, 3);
-  const enableLoop = images.length > 3;
-
   return (
-    <div className="hidden lg:flex relative w-full max-w-[1832px] h-[338px] mt-[60px] justify-center items-center overflow-hidden">
+    <div className="hidden lg:flex w-full max-w-[1832px] h-[338px] mt-[60px] justify-center items-center">
       <Swiper
         spaceBetween={24}
-        loop={enableLoop}
+        loop={images.length > 3}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[Autoplay]}
-        slidesPerView={slidesPerView}
+        slidesPerView={Math.min(images.length, 3)}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="w-[600px] h-[338px] rounded-[24px] border border-gray-300 overflow-hidden">
-              <img
-                srcSet={`/optimized/${image}-300.webp 300w,
-                        /optimized/${image}-600.webp 600w,
-                        /optimized/${image}-900.webp 900w,
-                        /optimized/${image}-1200.webp 1200w`}
-                sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
-                src={`/optimized/${image}-600.webp`}
+              <Image
+                src={image}
+                width={600}
+                height={338}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
