@@ -2,6 +2,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import TestimonialSection from "@/app/sections/Testimonials";
 
 const works = [
   { id: 1, title: "Mfon Usoro Books", slug: "mfon-usoro-books", description: "A book launch platform using Sanity CMS.", image: "/images/MP.webp", tags: ["2 weeks", "Website + CMS", "Book Launch"] },
@@ -39,6 +40,9 @@ export default function SingleProjectPage() {
             ))}
           </div>
         </div>
+      </div>
+      <div>
+        <TestimonialSection />
       </div>
     </motion.div>
   );

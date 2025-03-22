@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFilter } from "react-icons/fa";
+import TestimonialSection from "../sections/Testimonials";
 
 // Sample projects data
 const projects = [
@@ -32,8 +33,8 @@ export default function ProjectsPage() {
       </div>
 
       {/* Filters - Mobile Dropdown */}
-      <div className="p-4 md:hidden flex justify-end">
-        <button onClick={() => setIsFilterOpen(!isFilterOpen)} className="flex items-center gap-2 px-4 py-2 bg-purple text-lemon rounded-md font-nohemi">
+      <div className="p-4 md:hidden flex justify-center">
+        <button onClick={() => setIsFilterOpen(!isFilterOpen)} className="flex items-center gap-2 px-12 py-6 bg-purple text-lemon text-lg tracking-wider rounded-md font-nohemi">
           <FaFilter /> Filter
         </button>
       </div>
@@ -111,6 +112,9 @@ export default function ProjectsPage() {
           </motion.div>
         ))}
       </motion.div>
+      <div>
+        <TestimonialSection />
+      </div>
     </div>
   );
 }

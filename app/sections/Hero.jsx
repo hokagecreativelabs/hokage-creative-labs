@@ -10,7 +10,6 @@ const images = [
   "/images/MP.webp",
   "/images/daylee.webp",
   "/images/kings.webp",
-  "/images/b2b.webp",
 ];
 
 const Hero = () => {
