@@ -14,18 +14,15 @@ const serviceDetails = {
       pricing: [
         {
           tier: "Basic",
-          price: "$250",
           features: ["Logo Design", "Color Palette", "Typography Selection"],
         },
         {
           tier: "Standard",
-          price: "$600",
-          features: ["Logo & Brand Identity", "Business Card Design", "Social Media Assets"],
+          features: ["Logo Design", "Mockup", "JPG/PNG formats", "Social Media Assets (header & display picture)"],
         },
         {
           tier: "Premium",
-          price: "$1200",
-          features: ["Full Branding", "Brand Guide Document", "Stationery & Merch Design"],
+          features: ["Standard", "Vector files(EPS, SVG)", "Stationery Design (Letterhead, Complimentary/Business card)", "Brand guide document"],
         },
       ],
     },
@@ -62,23 +59,20 @@ const serviceDetails = {
       pricing: [
         {
           tier: "Basic",
-          price: "$500",
-          features: ["5-page website", "Mobile responsive", "Basic SEO", "Contact form"],
+          features: ["Landing Page", "Mobile responsive", "Basic SEO", "Contact form"],
         },
         {
           tier: "Standard",
-          price: "$1000",
-          features: ["10-page website", "Mobile responsive", "Advanced SEO", "CMS Integration"],
+          features: ["3-5 page website", "Mobile responsive", "Advanced SEO", "CMS Integration"],
         },
         {
           tier: "Premium",
-          price: "$2000",
-          features: ["Unlimited pages", "Custom Design", "Full SEO", "E-commerce Integration"],
+          features: ["Standard", "One Page / Feature Extra whenever needed (Free)", "Ongoing SEO",]
         },
       ],
     },
   
-    "e-commerce-applications": {
+    "ecommerce-solutions": {
       title: "E-commerce Applications",
       description:
         "Build dynamic, conversion-driven online stores with seamless user experiences. Empower your business with custom e-commerce solutions.",
@@ -173,7 +167,7 @@ export default function ServiceDetails() {
           onClick={() => router.push("/services")}
           className="mb-4 inline-flex items-center text-purple hover:text-lemon transition duration-300"
         >
-          ← Back to Services
+          ← Go to Services
         </button>
       </div>
 
@@ -194,10 +188,10 @@ export default function ServiceDetails() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {service.pricing.map((plan, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-vastago">{plan.tier}</h3>
+              <h3 className="text-3xl font-vastago font-semibold">{plan.tier}</h3>
               <ul className="text-gray-700 mt-4">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="text-sm my-2">• {feature}</li>
+                  <li key={i} className="text-md font-medium text-left my-2">• {feature}</li>
                 ))}
               </ul>
               <button className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple">
@@ -207,15 +201,9 @@ export default function ServiceDetails() {
           ))}
         </div>
       </div>
-      <div className="px-4 mt-12">
-      <button
-          onClick={() => router.push("/services")}
-          className="mb-4 inline-flex items-center text-purple hover:text-lemon transition duration-300"
-        >
-          ← Back to Services
-        </button>
+      <div className="mt-12">
+        <TestimonialSection />
       </div>
-      <TestimonialSection />
     </div>
   );
 }

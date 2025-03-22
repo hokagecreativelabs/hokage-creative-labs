@@ -5,41 +5,55 @@ import TestimonialSection from "../sections/Testimonials";
 
 // Sample services data
 const services = [
-  {
-    id: 1,
-    title: "Web Development",
-    slug: "web-development",
-    description: "We build fast, responsive, and SEO-optimized websites tailored to your needs.",
-    image: "/images/web.png",
-  },
-  {
-    id: 2,
-    title: "SEO Optimization",
-    slug: "seo-optimization",
-    description: "Boost your website's ranking and drive more traffic with our SEO strategies.",
-    image: "/images/seo.png",
-  },
-  {
-    id: 3,
-    title: "E-commerce Solutions",
-    slug: "ecommerce-solutions",
-    description: "Launch and scale your online store with our powerful e-commerce solutions.",
-    image: "/images/e-comm.png",
-  },
-  {
-    id: 4,
-    title: "Consulting",
-    slug: "consulting",
-    description: "Get expert guidance on digital transformation, branding, and online strategy.",
-    image: "/images/consult.png",
-  },
-  {
-    id: 5,
-    title: "Training & Workshops",
-    slug: "training-workshops",
-    description: "Upskill your team with our hands-on web development and SEO training.",
-    image: "/images/train.png",
-  },
+    {
+        id: 1,
+        title: "Branding",
+        slug: "branding",
+        description: "Transform your brand with powerful, visually stunning designs that make a lasting impact. We offer from basic (logo only) to premium (Full branding + Brand guide doc) services.",
+        image: "/images/web.png",
+      },
+      {
+        id: 2,
+        title: "UI/UX Design",
+        slug: "ui-ux-design",
+        description: "Create user-centric, engaging interfaces that boost customer retention and elevate user experiences. Intuitive design that turns visitors into loyal users.",
+        image: "/images/seo.png",
+    },
+    {
+        id: 3,
+        title: "Web Development",
+        slug: "web-development",
+        description: "We build fast, responsive, and SEO-optimized websites tailored to your needs.",
+        image: "/images/web.png",
+    },
+    {
+        id: 4,
+        title: "SEO Optimization",
+        slug: "seo-optimization",
+        description: "Boost your website's ranking and drive more traffic with our SEO strategies.",
+        image: "/images/seo.png",
+    },
+    {
+        id: 5,
+        title: "E-commerce Solutions",
+        slug: "ecommerce-solutions",
+        description: "Launch and scale your online store with our powerful e-commerce solutions.",
+        image: "/images/e-comm.png",
+    },
+    {
+        id: 6,
+        title: "Consulting",
+        slug: "consulting",
+        description: "Get expert guidance on digital transformation, branding, and online strategy.",
+        image: "/images/consult.png",
+    },
+    {
+        id: 7,
+        title: "Web Development Training For Beginners",
+        slug: "web-development-training",
+        description: "Upskill your team with our hands-on web development and SEO training.",
+        image: "/images/train.png",
+    },
 ];
 
 export default function ServicesPage() {
