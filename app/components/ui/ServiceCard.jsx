@@ -1,46 +1,24 @@
-"use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const ServiceCard = ({ title, description, image, slug }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push(`/services/${slug}`);
-  };
-
   return (
-    <motion.div
-      className="flex flex-col gap-6 w-full cursor-pointer"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      whileHover={{ scale: 1.02 }}
-      onClick={handleClick} // Navigate on click
-    >
-      {/* Image Wrapper */}
-      <div className="relative w-full h-[300px] overflow-hidden rounded-[16px] md:rounded-[25px]">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover w-full h-full"
-          loading="lazy"
-        />
-      </div>
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img className="w-full h-48 object-cover" src={image} alt={title} />
 
-      {/* Content */}
-      <div className="flex flex-col gap-3">
-        <h3 className="font-vastago text-[32px] font-medium leading-[140%] tracking-[-1px]">
-          {title}
-        </h3>
-        <p className="font-nohemi text-[18px] font-normal leading-[150%] text-[#667185]">
-          {description}
-        </p>
+      <div className="p-6">
+        {/* Title + See Details Link (Flexed) */}
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xl font-semibold">{title}</h2>
+
+          <Link href={`/services/${slug}`} className="flex items-center text-blue-600 underline hover:text-blue-800 transition duration-300">
+            See Details <FaArrowRight className="ml-1" />
+          </Link>
+        </div>
+
+        <p className="text-gray-600">{description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
