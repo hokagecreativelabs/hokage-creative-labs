@@ -4,7 +4,7 @@ import ServiceCard from "../components/ui/ServiceCard";
 const services = [
   {
     title: "Branding",
-    description: "Transform your brand with powerful, visually stunning designs that make a lasting impact. Enhance your identity with creative visuals that resonate.",
+    description: "Transform your brand with powerful, visually stunning designs that make a lasting impact. We offer from basic (logo only) to premium (Full branding + Brand guide doc) services.",
     image: "/images/web.png",
   },
   {

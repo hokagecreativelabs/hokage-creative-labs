@@ -12,8 +12,8 @@ module.exports = {
         lemon: "#7FF41A",
       },
       fontFamily: {
-        vastago: ["Vastago Grotesque", "sans-serif"],
-        nohemi: ["Nohemi", "sans-serif"],
+        vastago: ["Vastago Grotesque", "sans-serif"], // Heading texts h1-h6
+        nohemi: ["Nohemi", "sans-serif"], // paragraphs, link texts, button texts, spans etc
       },
     },
   },

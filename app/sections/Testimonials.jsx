@@ -24,7 +24,7 @@ export default function TestimonialSection() {
             Testimonials
           </h2>
         </div>
-        <h2 className="text-[20px] md:text-[28px] font-vastago font-medium leading-[125%] text-center">
+        <h2 className="text-[20px] md:text-[32px] font-vastago font-medium leading-[125%] text-center">
           Feedback from past clients
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -33,13 +33,13 @@ export default function TestimonialSection() {
               key={index}
               className="tracking-wide w-full max-w-[400px] h-auto p-6 gap-5 border border-gray-300 rounded-[12px] shadow-lg flex flex-col justify-center items-center text-center"
             >
-              <p className="font-nohemi font-normal text-[16px] leading-[140%] mb-4">
+              <p className="font-nohemi font-semibold tracking-wider text-[16px] leading-[140%] mb-4">
                 "{testimonial.text}"
               </p>
               <h3 className="font-nohemi font-bold text-[16px] leading-[140%]">
                 {testimonial.name}
               </h3>
-              <p className="font-nohemi font-normal text-[14px] leading-[140%]">
+              <p className="font-nohemi font-normal tracking-wider text-[14px] leading-[140%]">
                 {testimonial.role}
               </p>
             </div>

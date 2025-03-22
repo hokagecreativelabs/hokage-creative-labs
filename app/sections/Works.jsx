@@ -12,28 +12,24 @@ const works = [
   },
   {
     id: 2,
-    title: "The Oladayo Akinmokun",
-    tags: ["1 Week", "SPA", "Personal Portfolio"],
-    image: "/images/daylee.webp",
+    title: "KingsWord Canada",
+    tags: ["3 weeks", "Web Development + Custom Dashboard", "Real Estate"],
+    image: "/images/kings.webp",
   },
   {
     id: 3,
-    title: "Enauf Homes",
-    tags: ["1 week", "Web Development", "Real Estate"],
-    image: "/images/enauf.webp",
-  },
-  {
-    id: 4,
     title: "The ITL Conference - The Westin, Calgary",
     tags: ["12 weeks", "Website + Custom Dashboard", "Conference Website"],
     image: "/images/itl.webp",
   },
   {
-    id: 5,
-    title: "KingsWord Church, Canada",
-    tags: ["12 weeks", "Website + Custom Dashboard", "Church Website"],
-    image: "/images/itl.webp",
+    id: 4,
+    title: "The Oladayo Akinmokun",
+    tags: ["1 Week", "SPA", "Personal Portfolio"],
+    image: "/images/daylee.webp",
   },
+  { id: 5, title: "Party Deal Catering", tags: ["1 Week", "Branding", "Catering Service Company"], category: "Branding", image: "/images/partyy.png" },
+  { id: 6, title: "Hokage Creative Labs", tags: ["1 Week", "Branding", "Web / Digital Agency"], category: "Branding", image: "/images/hoka.png" },
 ];
 
 const WorksSection = () => {
@@ -44,7 +40,7 @@ const WorksSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="w-full max-w-[1248px] px-4 sm:px-8 lg:px-0">
+      <div className="w-full max-w-[1300px] px-4 sm:px-8 lg:px-0">
         <h2 className="font-vastago mb-6 text-[42px] font-normal leading-[120%] tracking-[-1px]">
           Selected Works
         </h2>
@@ -55,7 +51,7 @@ const WorksSection = () => {
             return (
               <motion.div
                 key={work.id}
-                className="w-full max-w-[608px] mx-auto overflow-hidden shadow-lg rounded-[25px] transform transition-transform hover:scale-105 will-change-transform"
+                className="w-full max-w-[650px] mx-auto overflow-hidden shadow-lg rounded-[25px] transform transition-transform hover:scale-105 will-change-transform"
                 whileHover={{ scale: 1.03 }}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -63,13 +59,13 @@ const WorksSection = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <Link legacyBehavior href={link} passHref>
-                  <a className="block relative w-full aspect-[16/9] rounded-[25px] overflow-hidden">
+                  <a className="block relative w-full aspect-[4/3] rounded-[25px] overflow-hidden bg-purple">
                     <Image
                       src={work.image}
                       alt={`Project: ${work.title}`}
                       fill
-                      sizes="(max-width: 608px) 100vw, 608px"
-                      className="object-cover"
+                      sizes="(max-width: 650px) 100vw, 650px"
+                      className="object-contain" // Keeps full image visible without cropping
                       priority={work.id === 1}
                       loading={work.id === 1 ? "eager" : "lazy"}
                     />

@@ -29,15 +29,20 @@ const Hero = () => {
     return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
+  // Typing effect for the H1 (delayed start)
   useEffect(() => {
-    if (textIndex < typingText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + typingText[textIndex]);
-        setTextIndex((prev) => prev + 1);
-      }, 50);
-      return () => clearTimeout(timeout);
-    }
+    const delayTimeout = setTimeout(() => {
+      if (textIndex < typingText.length) {
+        const typingTimeout = setTimeout(() => {
+          setDisplayedText((prev) => prev + typingText[textIndex]);
+          setTextIndex((prev) => prev + 1);
+        }, 10); // Typing speed
+        return () => clearTimeout(typingTimeout);
+      }
+    }, 300); // Delay before typing starts
+    return () => clearTimeout(delayTimeout);
   }, [textIndex]);
+
 
   useEffect(() => {
     const handleScroll = () => setShowCTA(window.scrollY < 100);

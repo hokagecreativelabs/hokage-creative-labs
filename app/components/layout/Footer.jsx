@@ -21,7 +21,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-4">
                         {/* Top Left (Nav Links) */}
                         <div className="w-full md:w-[462px] flex items-center justify-around">
-                            <a href="#" className="font-nohemi text-white text-base font-medium">Projects</a>
+                            <a href="/projects" className="font-nohemi text-white text-base font-medium">Projects</a>
                             <a href="#" className="font-nohemi text-white text-base font-medium">About</a>
                             <a href="#" className="font-nohemi text-white text-base font-medium">Contact</a>
                         </div>

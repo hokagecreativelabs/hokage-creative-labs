@@ -63,19 +63,17 @@ const AboutSection = () => {
         </motion.div>
 
         {/* Animated Text Content */}
-        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-[-0.04em] text-[#667185]">
+        <p className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-relaxed text-[#667185] ">
           {fadeInWords("At HCL, we specialize in crafting")}
-          <span className="font-[600] text-black font-nohemi tracking-tight">
-            {" "}
+          <span className="font-[600] text-black font-nohemi">
             next-gen web experiences
           </span>
           {fadeInWords(" that blend creativity with cutting-edge technology.")}
         </p>
 
-        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-[-0.04em] text-[#667185]">
+        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-relaxed text-[#667185]">
           {fadeInWords("We deliver tailored solutions for")}
-          <span className="font-[600] text-black font-nohemi tracking-tight">
-            {" "}
+          <span className="font-[600] text-black font-nohemi">
             upgrading your site or creating a new digital platform.
           </span>
         </p>
