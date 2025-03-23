@@ -10,7 +10,7 @@ const serviceDetails = {
       title: "Branding",
       description:
         "Transform your brand with powerful, visually stunning designs that make a lasting impact. We offer from basic (logo only) to premium (Full branding + Brand guide doc) services.",
-      image: "/images/web.png",
+      image: "/images/brand.webp",
       pricing: [
         {
           tier: "Basic",
@@ -18,7 +18,7 @@ const serviceDetails = {
         },
         {
           tier: "Standard",
-          features: ["Logo Design", "Mockup", "JPG/PNG formats", "Social Media Assets (header & display picture)"],
+          features: ["Logo Design", "Mockup", "JPG/webp formats", "Social Media Assets (header & display picture)"],
         },
         {
           tier: "Premium",
@@ -31,21 +31,18 @@ const serviceDetails = {
       title: "UI/UX Design",
       description:
         "Create user-centric, engaging interfaces that boost customer retention and elevate user experiences. Intuitive design that turns visitors into loyal users.",
-      image: "/images/seo.png",
+      image: "/images/product.webp",
       pricing: [
         {
           tier: "Basic",
-          price: "$400",
           features: ["Wireframes", "Mobile & Desktop Layouts", "Basic Prototyping"],
         },
         {
           tier: "Standard",
-          price: "$900",
           features: ["High-Fidelity UI", "User Testing", "Interactive Prototyping"],
         },
         {
           tier: "Premium",
-          price: "$1800",
           features: ["Full UX Research", "Complete UI Kit", "UX Writing & Strategy"],
         },
       ],
@@ -55,7 +52,7 @@ const serviceDetails = {
       title: "Web Development",
       description:
         "Develop high-performance websites with robust, scalable architectures. Optimize your online presence for speed, functionality, and success.",
-      image: "/images/web.png",
+      image: "/images/dev.webp",
       pricing: [
         {
           tier: "Basic",
@@ -72,25 +69,22 @@ const serviceDetails = {
       ],
     },
   
-    "ecommerce-solutions": {
-      title: "E-commerce Applications",
+    "e-commerce-applications": {
+      title: "E-commerce Applicationss",
       description:
         "Build dynamic, conversion-driven online stores with seamless user experiences. Empower your business with custom e-commerce solutions.",
-      image: "/images/e-comm.png",
+      image: "/images/comm.webp",
       pricing: [
         {
           tier: "Basic",
-          price: "$800",
           features: ["Basic Storefront", "Product Listings", "Shopping Cart"],
         },
         {
           tier: "Standard",
-          price: "$1500",
           features: ["Custom UI", "Payment Gateway Integration", "User Authentication"],
         },
         {
           tier: "Premium",
-          price: "$3000",
           features: ["Multi-Vendor Support", "Custom Checkout Flow", "AI Recommendations"],
         },
       ],
@@ -100,21 +94,18 @@ const serviceDetails = {
       title: "Consultations",
       description:
         "Receive expert digital strategy guidance to refine your vision and achieve your goals. Tailored solutions for impactful results.",
-      image: "/images/consult.png",
+      image: "/images/consult.webp",
       pricing: [
         {
           tier: "Basic",
-          price: "$150",
           features: ["1-Hour Session", "Basic Website Review", "Marketing Advice"],
         },
         {
           tier: "Standard",
-          price: "$400",
           features: ["3-Hour Strategy Session", "UX/UI Review", "SEO Optimization Tips"],
         },
         {
           tier: "Premium",
-          price: "$900",
           features: ["Full Digital Audit", "Brand & Business Strategy", "Growth Consultation"],
         },
       ],
@@ -124,22 +115,39 @@ const serviceDetails = {
       title: "Web Development Training",
       description:
         "Gain hands-on experience with modern web development techniques. Master scalable solutions and future-ready skills for real-world projects.",
-      image: "/images/train.png",
+      image: "/images/training.webp",
       pricing: [
         {
           tier: "Basic",
-          price: "$300",
           features: ["HTML & CSS Basics", "JavaScript Fundamentals", "Building Static Websites"],
         },
         {
           tier: "Standard",
-          price: "$750",
           features: ["React & Next.js", "API Integration", "Frontend & Backend Basics"],
         },
         {
           tier: "Premium",
-          price: "$1500",
           features: ["Full-Stack Development", "Real-World Projects", "Career Guidance"],
+        },
+      ],
+    },
+    "seo-optimization": {
+      title: "SEO Optimization",
+      description:
+        "Boost your website's ranking and drive more traffic with our SEO strategies.",
+      image: "/images/seo.webp",
+      pricing: [
+        {
+          tier: "Basic",
+          // features: ["HTML & CSS Basics", "JavaScript Fundamentals", "Building Static Websites"],
+        },
+        {
+          tier: "Standard",
+          // features: ["React & Next.js", "API Integration", "Frontend & Backend Basics"],
+        },
+        {
+          tier: "Premium",
+          // features: ["Full-Stack Development", "Real-World Projects", "Career Guidance"],
         },
       ],
     },
@@ -189,11 +197,11 @@ export default function ServiceDetails() {
           {service.pricing.map((plan, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg p-6 text-center">
               <h3 className="text-3xl font-vastago font-semibold">{plan.tier}</h3>
-              <ul className="text-gray-700 mt-4">
+              {/* <ul className="text-gray-700 mt-4">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="text-md font-medium text-left my-2">• {feature}</li>
                 ))}
-              </ul>
+              </ul> */}
               <button className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple">
                 Get Started
               </button>

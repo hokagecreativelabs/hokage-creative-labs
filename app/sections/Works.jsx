@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const works = [
   {
@@ -65,16 +66,21 @@ const WorksSection = () => {
                       alt={`Project: ${work.title}`}
                       fill
                       sizes="(max-width: 650px) 100vw, 650px"
-                      className="object-contain" // Keeps full image visible without cropping
+                      className="object-contain"
                       priority={work.id === 1}
                       loading={work.id === 1 ? "eager" : "lazy"}
                     />
                   </a>
                 </Link>
+                
                 <div className="p-6 bg-white dark:bg-gray-900">
-                  <h3 className="font-vastago text-xl sm:text-2xl font-semibold mb-4">
-                    {work.title}
-                  </h3>
+                  {/* Title + See Details Link (Flexed) */}
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="font-vastago text-xl sm:text-2xl font-semibold">{work.title}</h3>
+
+                    
+                  </div>
+
                   <div className="flex flex-wrap gap-2">
                     {work.tags.map((tag, index) => (
                       <span
@@ -85,6 +91,9 @@ const WorksSection = () => {
                       </span>
                     ))}
                   </div>
+                  <Link href={link} className="mt-6 flex items-center text-blue-600 underline hover:text-blue-800 transition duration-300">
+                    See Details <FaArrowRight className="ml-1" />
+                  </Link>
                 </div>
               </motion.div>
             );

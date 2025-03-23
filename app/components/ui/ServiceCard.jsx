@@ -11,12 +11,12 @@ const ServiceCard = ({ title, description, image, slug }) => {
         <div className="flex justify-between items-center mb-2">
           <h2 className="text-xl font-semibold">{title}</h2>
 
-          <Link href={`/services/${slug}`} className="flex items-center text-blue-600 underline hover:text-blue-800 transition duration-300">
-            See Details <FaArrowRight className="ml-1" />
-          </Link>
         </div>
 
         <p className="text-gray-600">{description}</p>
+          <Link href={`/services/${slug}`} className="mt-4 text-sm flex items-center text-blue-600 underline hover:text-blue-800 transition duration-300">
+            See Details <FaArrowRight className="ml-1" />
+          </Link>
       </div>
     </div>
   );
