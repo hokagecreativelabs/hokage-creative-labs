@@ -57,7 +57,7 @@ const Hero = () => {
       style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
     >
       <div className="w-full max-w-[1046px] flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8">
-        <h1 className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em]">
+        <h1 className="text-purple font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em]">
           {displayedText}
         </h1>
 

@@ -5,36 +5,37 @@ import { motion } from "framer-motion";
 import { FaFilter } from "react-icons/fa";
 import TestimonialSection from "../sections/Testimonials";
 
-// Sample projects data
 const projects = [
   { id: 1, title: "Mfon Usoro Books", slug: "mfon-usoro-books", category: "Web Development", image: "/images/MP.webp" },
-  { id: 3, title: "The ITL Conference", slug: "itl-conference", category: "Web Development", image: "/images/itl.webp" },
   { id: 2, title: "The Oladayo Akinmokun", slug: "the-oladayo-akinmokun", category: "Web Development", image: "/images/daylee.webp" },
+  { id: 3, title: "The ITL Conference", slug: "itl-conference", category: "Web Development", image: "/images/itl.webp" },
   { id: 4, title: "Party Deal Catering", slug: "party-deal", category: "Branding", image: "/images/partyy.png" },
   { id: 5, title: "Hokage Creative Labs", slug: "hokage-creative", category: "Branding", image: "/images/hoka.png" },
   { id: 6, title: "Asake Foods", slug: "asake-foods", category: "Branding", image: "/images/asake-foods.jpg" },
 ];
 
-// Service categories
 const categories = ["All", "Branding", "UI/UX", "Web Development"];
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  // Filter projects based on selected category
   const filteredProjects = selectedCategory === "All" ? projects : projects.filter((p) => p.category === selectedCategory);
 
   return (
-    <div className="relative min-h-screen py-32">
+    <div className="relative min-h-screen mx-auto py-32">
       {/* Banner */}
-      <div className="relative h-32 md:h-48 flex items-center justify-center" style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}>
+      <div className="relative h-32 md:h-48 flex items-center justify-center bg-cover" style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}>
         <h1 className="text-black text-[56px] md:text-[96px] font-vastago">Projects</h1>
       </div>
 
-      {/* Filters - Mobile Dropdown */}
+      {/* Mobile Filter Button */}
       <div className="p-4 md:hidden flex justify-center">
-        <button onClick={() => setIsFilterOpen(!isFilterOpen)} className="flex items-center gap-2 px-12 py-6 bg-purple text-lemon text-lg tracking-wider rounded-md font-nohemi">
+        <button
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+          className="flex items-center gap-2 px-12 py-6 bg-purple text-lemon text-lg tracking-wider rounded-md font-nohemi"
+          aria-label="Open filter menu"
+        >
           <FaFilter /> Filter
         </button>
       </div>
@@ -58,14 +59,17 @@ export default function ProjectsPage() {
                 {category}
               </button>
             ))}
-            <button onClick={() => setIsFilterOpen(false)} className="mt-3 w-full py-2 text-center text-white bg-purple rounded-md font-nohemi">
+            <button
+              onClick={() => setIsFilterOpen(false)}
+              className="mt-3 w-full py-2 text-center text-white bg-purple rounded-md font-nohemi"
+            >
               Close
             </button>
           </div>
         </div>
       )}
 
-      {/* Filters - Desktop */}
+      {/* Desktop Filters */}
       <div className="hidden md:flex justify-center gap-4 my-6">
         {categories.map((category) => (
           <button
@@ -88,33 +92,18 @@ export default function ProjectsPage() {
         transition={{ duration: 0.5 }}
       >
         {filteredProjects.map((project) => (
-          <motion.div
-            key={project.id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden"
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Image - Expanded and Optimized */}
-            <div className="relative w-full h-64"> {/* Increased height */}
-              <img src={project.image} alt={project.title} className="w-full h-full object-contain" />
-            </div>
-
-            {/* Content */}
-            <div className="p-6"> {/* More spacing */}
-              <h2 className="text-2xl font-vastago">{project.title}</h2> {/* Bigger title */}
+          <motion.div key={project.id} className="bg-white shadow-lg rounded-lg overflow-hidden" whileHover={{ scale: 1.03 }}>
+            <img src={project.image} alt={`Project - ${project.title}`} className="w-full h-64 object-cover" />
+            <div className="p-6">
+              <h2 className="text-2xl font-vastago">{project.title}</h2>
               <p className="text-sm text-gray-500 font-nohemi">{project.category}</p>
-              <Link href={`/projects/${project.slug}`}>
-                <button className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple">
-                  See Case Study →
-                </button>
-              </Link>
+              <Link href={`/projects/${project.slug}`} className="block mt-4 text-purple hover:underline">See Case Study →</Link>
             </div>
           </motion.div>
         ))}
       </motion.div>
-      <div>
-        <TestimonialSection />
-      </div>
+
+      <TestimonialSection />
     </div>
   );
 }

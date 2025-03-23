@@ -2,25 +2,22 @@
 
 import { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const qnas = [
-  { question: "What types of development services do you offer?", answer: "We offer full-stack development, frontend engineering, backend systems, and more." },
-  { question: "How do you ensure the quality of your projects?", answer: "We follow best practices, code reviews, and testing protocols." },
-  { question: "What is your development process like?", answer: "We follow agile methodologies, keeping you updated at every step." },
-  { question: "Can you work with existing platforms?", answer: "Yes, we can seamlessly integrate with existing systems." },
-  { question: "How do you handle project timelines?", answer: "We set realistic deadlines and ensure timely communication and updates." },
+  { question: "What types of services do you offer?", answer: "We offer full brand identity design, Web Design & Web Developmemnt Services, Performance Optimizations, Web Developemtnt training and more." },
+  { question: "How do you ensure the quality of your projects?", answer: "We follow best practices, code reviews, and testing protocols. You can visit our projects page and see how some of our websites are performing online." },
+  { question: "What is your development process like?", answer: "We follow agile methodologies, keeping you updated at every step - from the inital contact to handover." },
+  { question: "Can you work with existing platforms?", answer: "Yes, we can seamlessly upgrade or build newly with client's preferrerd platforms even tho we still give our professional input." },
+  { question: "How do you handle project timelines?", answer: "After understanding the client's needs, we set realistic deadlines and ensure timely communication and updates." },
   { question: "How often will I receive updates on the project?", answer: "We provide regular updates through your preferred communication channel." },
 ];
 
 export default function QnASection() {
-  const [activeIndices, setActiveIndices] = useState(Array(qnas.length).fill(false));
+  const [activeIndex, setActiveIndex] = useState(null); // Track the single open QnA
 
   const toggleQnA = (index) => {
-    setActiveIndices((prevIndices) => {
-      const newIndices = [...prevIndices];
-      newIndices[index] = !newIndices[index];
-      return newIndices;
-    });
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index)); // Close if same, else open new one
   };
 
   return (
@@ -31,27 +28,75 @@ export default function QnASection() {
           <span className="text-gray-500">Questions</span>
         </h2>
 
+        {/* Two-column layout on desktop, single-column on mobile */}
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-          {qnas.map((qna, index) => (
-            <div
-              key={index}
-              className={`w-full p-6 md:p-8 border rounded-3xl cursor-pointer transition-all duration-300 ${
-                activeIndices[index] ? "bg-gray-100" : "h-auto"
-              }`}              
-              onClick={() => toggleQnA(index)}
-            >
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold">{qna.question}</span>
-                {activeIndices[index] ? <FiMinus /> : <FiPlus />}
-              </div>
-              {activeIndices[index] && (
-                <div className="overflow-hidden transition-max-height duration-300 ease-in-out">
-                  <hr className="my-4 border-gray-300" />
-                  <p className="mt-2 text-gray-600">{qna.answer}</p>
+          {/* Left Column */}
+          <div className="flex flex-col gap-4">
+            {qnas.slice(0, 3).map((qna, index) => {
+              const isActive = activeIndex === index;
+
+              return (
+                <div
+                  key={index}
+                  className={`w-full p-6 md:p-8 border rounded-3xl cursor-pointer transition-all duration-300 ${
+                    isActive ? "bg-gray-100" : "h-auto"
+                  }`}
+                  onClick={() => toggleQnA(index)}
+                >
+                  {/* Question */}
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg font-semibold">{qna.question}</span>
+                    {isActive ? <FiMinus /> : <FiPlus />}
+                  </div>
+
+                  {/* Animated Answer */}
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <hr className="my-4 border-gray-300" />
+                    <p className="mt-2 text-gray-600">{qna.answer}</p>
+                  </motion.div>
                 </div>
-              )}
-            </div>
-          ))}
+              );
+            })}
+          </div>
+
+          {/* Right Column */}
+          <div className="flex flex-col gap-4">
+            {qnas.slice(3, 6).map((qna, index) => {
+              const isActive = activeIndex === index + 3;
+
+              return (
+                <div
+                  key={index + 3}
+                  className={`w-full p-6 md:p-8 border rounded-3xl cursor-pointer transition-all duration-300 ${
+                    isActive ? "bg-gray-100" : "h-auto"
+                  }`}
+                  onClick={() => toggleQnA(index + 3)}
+                >
+                  {/* Question */}
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg font-semibold">{qna.question}</span>
+                    {isActive ? <FiMinus /> : <FiPlus />}
+                  </div>
+
+                  {/* Animated Answer */}
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <hr className="my-4 border-gray-300" />
+                    <p className="mt-2 text-gray-600">{qna.answer}</p>
+                  </motion.div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

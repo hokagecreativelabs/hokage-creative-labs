@@ -91,8 +91,8 @@ const WorksSection = () => {
                       </span>
                     ))}
                   </div>
-                  <Link href={link} className="mt-6 flex items-center text-blue-600 underline hover:text-blue-800 transition duration-300">
-                    See Details <FaArrowRight className="ml-1" />
+                  <Link href={link} className="mt-6  flex items-center text-purple underline hover:text-blue-800 transition duration-300">
+                    See Details <FaArrowRight className="ml-1 text-lemon" />
                   </Link>
                 </div>
               </motion.div>

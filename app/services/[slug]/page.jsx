@@ -28,128 +28,122 @@ const serviceDetails = {
     },
   
     "ui-ux-design": {
-      title: "UI/UX Design",
-      description:
-        "Create user-centric, engaging interfaces that boost customer retention and elevate user experiences. Intuitive design that turns visitors into loyal users.",
-      image: "/images/product.webp",
-      pricing: [
+      "title": "UI/UX Design",
+      "description": "Design engaging, user-friendly interfaces that enhance customer retention and drive user satisfaction. Transform visitors into loyal users with intuitive experiences.",
+      "image": "/images/product.webp",
+      "pricing": [
         {
-          tier: "Basic",
-          features: ["Wireframes", "Mobile & Desktop Layouts", "Basic Prototyping"],
+          "tier": "Basic",
+          "features": ["Wireframes", "Mobile & Desktop Layouts", "Low-Fidelity Prototyping"]
         },
         {
-          tier: "Standard",
-          features: ["High-Fidelity UI", "User Testing", "Interactive Prototyping"],
+          "tier": "Standard",
+          "features": ["Pixel-Perfect UI Design", "User Testing & Feedback", "Interactive Prototyping"]
         },
         {
-          tier: "Premium",
-          features: ["Full UX Research", "Complete UI Kit", "UX Writing & Strategy"],
-        },
-      ],
+          "tier": "Premium",
+          "features": ["Comprehensive UX Research", "Design System & UI Kit", "UX Writing & Strategy"]
+        }
+      ]
     },
   
     "web-development": {
-      title: "Web Development",
-      description:
-        "Develop high-performance websites with robust, scalable architectures. Optimize your online presence for speed, functionality, and success.",
-      image: "/images/dev.webp",
-      pricing: [
+      "title": "Web Development",
+      "description": "Develop high-performance websites with robust, scalable architectures. Optimize your online presence for speed, functionality, and long-term success.",
+      "image": "/images/dev.webp",
+      "pricing": [
         {
-          tier: "Basic",
-          features: ["Landing Page", "Mobile responsive", "Basic SEO", "Contact form"],
+          "tier": "Basic",
+          "features": ["Landing Page", "Fully Responsive Design", "SEO Optimization (Basic)", "Contact Form"]
         },
         {
-          tier: "Standard",
-          features: ["3-5 page website", "Mobile responsive", "Advanced SEO", "CMS Integration"],
+          "tier": "Standard",
+          "features": ["3-5 Page Website", "Fully Responsive Design", "SEO Optimization (Advanced)", "CMS Integration / Dashboard"]
         },
         {
-          tier: "Premium",
-          features: ["Standard", "One Page / Feature Extra whenever needed (Free)", "Ongoing SEO",]
-        },
-      ],
+          "tier": "Premium",
+          "features": ["Custom Web Solution", "Unlimited Pages", "1 Free Feature/Page Upgrade", "Ongoing SEO & Performance Optimization"]
+        }
+      ]
     },
   
     "e-commerce-applications": {
-      title: "E-commerce Applicationss",
-      description:
-        "Build dynamic, conversion-driven online stores with seamless user experiences. Empower your business with custom e-commerce solutions.",
-      image: "/images/comm.webp",
-      pricing: [
+      "title": "E-commerce Applications",
+      "description": "Build scalable, high-converting online stores with seamless user experiences and secure transactions. Empower your business with custom e-commerce solutions optimized for growth.",
+      "image": "/images/comm.webp",
+      "pricing": [
         {
-          tier: "Basic",
-          features: ["Basic Storefront", "Product Listings", "Shopping Cart"],
+          "tier": "Basic",
+          "features": ["Starter E-commerce Website", "Product Listings", "Shopping Cart"]
         },
         {
-          tier: "Standard",
-          features: ["Custom UI", "Payment Gateway Integration", "User Authentication"],
+          "tier": "Standard",
+          "features": ["Custom E-commerce UI/UX", "Payment Gateway Integration", "User Authentication & Profiles"]
         },
         {
-          tier: "Premium",
-          features: ["Multi-Vendor Support", "Custom Checkout Flow", "AI Recommendations"],
-        },
-      ],
+          "tier": "Premium",
+          "features": ["Multi-Vendor Marketplace Support", "Custom Checkout Flow", "Advanced Analytics & Reporting"]
+        }
+      ]
     },
   
-    "consultations": {
-      title: "Consultations",
-      description:
-        "Receive expert digital strategy guidance to refine your vision and achieve your goals. Tailored solutions for impactful results.",
-      image: "/images/consult.webp",
-      pricing: [
+   "consultations": {
+      "title": "Consultations",
+      "description": "Expert consulting for digital success. Get tailored insights to enhance business performance, optimize digital presence, and drive scalable growth with data-driven strategies.",
+      "image": "/images/consult.webp",
+      "pricing": [
         {
-          tier: "Basic",
-          features: ["1-Hour Session", "Basic Website Review", "Marketing Advice"],
+          "tier": "Basic",
+          "features": ["FREE 30 minutes Session", "Basic Website Review", "Basic Digital Marketing Strategy"]
         },
         {
-          tier: "Standard",
-          features: ["3-Hour Strategy Session", "UX/UI Review", "SEO Optimization Tips"],
+          "tier": "Standard",
+          "features": ["30ins - 1Hour Strategy Session", "UX/UI Review", "Actionable SEO & Conversion Optimization"]
         },
         {
-          tier: "Premium",
-          features: ["Full Digital Audit", "Brand & Business Strategy", "Growth Consultation"],
-        },
-      ],
+          "tier": "Premium",
+          "features": ["Full Brand Audit", "Brand & Business Strategy", "Growth Consultation",]
+        }
+      ]
     },
-  
+      
     "web-development-training": {
-      title: "Web Development Training",
-      description:
-        "Gain hands-on experience with modern web development techniques. Master scalable solutions and future-ready skills for real-world projects.",
-      image: "/images/training.webp",
-      pricing: [
+      "title": "Web Development Training",
+      "description": "Learn modern web development with practical, hands-on coding experience. Build responsive designs, dynamic applications, and scalable web solutions for real-world success.",
+      "image": "/images/training.webp",
+      "pricing": [
         {
-          tier: "Basic",
-          features: ["HTML & CSS Basics", "JavaScript Fundamentals", "Building Static Websites"],
+          "tier": "Basic",
+          "features": ["HTML & CSS Basics", "JavaScript Fundamentals", "Building Responsive Static Websites"]
         },
         {
-          tier: "Standard",
-          features: ["React & Next.js", "API Integration", "Frontend & Backend Basics"],
+          "tier": "Standard",
+          "features": ["React & Next.js", "API Integration", "Dynamic Web Applications"]
         },
         {
-          tier: "Premium",
-          features: ["Full-Stack Development", "Real-World Projects", "Career Guidance"],
-        },
-      ],
+          "tier": "Premium",
+          "features": ["Full-Stack Development", "Real-World Projects", "Career Guidance & Positioning"]
+        }
+      ]
     },
     "seo-optimization": {
-      title: "SEO Optimization",
-      description:
-        "Boost your website's ranking and drive more traffic with our SEO strategies.",
-      image: "/images/seo.webp",
-      pricing: [
+      "title": "SEO Optimization",
+      "description": "Improve search rankings, increase organic traffic, and enhance user engagement with our expert SEO strategies. We optimize for Google’s latest algorithms to ensure long-term success.",
+      "image": "/images/seo.webp",
+      "pricing": [
         {
-          tier: "Basic",
-          // features: ["HTML & CSS Basics", "JavaScript Fundamentals", "Building Static Websites"],
+          "tier": "Basic",
+          "features": ["On-Page Optimization", "Keyword Research", "Meta Tags & Descriptions"]
         },
         {
-          tier: "Standard",
-          // features: ["React & Next.js", "API Integration", "Frontend & Backend Basics"],
+          "tier": "Standard",
+          "features": ["Technical SEO", "Content Optimization", "Mobile & Page Speed Optimization"]
         },
         {
-          tier: "Premium",
-          // features: ["Full-Stack Development", "Real-World Projects", "Career Guidance"],
-        },
-      ],
+          "tier": "Premium",
+          "features": ["Full SEO Audit", "Backlink Strategy", "Long-Term SEO Growth Plan"]
+        }
+      ]
     },
   };
   
@@ -197,14 +191,11 @@ export default function ServiceDetails() {
           {service.pricing.map((plan, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg p-6 text-center">
               <h3 className="text-3xl font-vastago font-semibold">{plan.tier}</h3>
-              {/* <ul className="text-gray-700 mt-4">
+              <ul className="text-gray-700 mt-4">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="text-md font-medium text-left my-2">• {feature}</li>
                 ))}
-              </ul> */}
-              <button className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple">
-                Get Started
-              </button>
+              </ul>
             </div>
           ))}
         </div>

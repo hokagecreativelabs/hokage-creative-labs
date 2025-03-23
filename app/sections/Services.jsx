@@ -1,5 +1,6 @@
 "use client";
 import { Suspense, lazy } from "react";
+import { motion } from "framer-motion";
 
 const ServiceCard = lazy(() => import("../components/ui/ServiceCard"));
 
@@ -60,36 +61,63 @@ const bottomServices = [
 const ServicesSection = () => {
   return (
     <section className="flex flex-col gap-12 pb-20 mx-auto max-w-[1248px] px-6">
-      <h2 className="font-vastago text-[48px] font-normal leading-[120%] tracking-[-1px] mb-[-25px]">
+      <motion.h2
+        className="font-vastago text-[48px] font-normal leading-[120%] tracking-[-1px] mb-[-25px]"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         Our Services
-      </h2>
-      
+      </motion.h2>
+
       <Suspense fallback={<p>Loading services...</p>}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               title={service.title}
               description={service.description}
               image={service.image}
-              slug={service.slug} // Pass slug for navigation
+              slug={service.slug}
             />
           ))}
-        </div>
+        </motion.div>
       </Suspense>
 
       <Suspense fallback={<p>Loading additional services...</p>}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
           {bottomServices.map((service, index) => (
             <ServiceCard
               key={index}
               title={service.title}
               description={service.description}
               image={service.image}
-              slug={service.slug} // Pass slug for navigation
+              slug={service.slug}
             />
           ))}
-        </div>
+        </motion.div>
       </Suspense>
     </section>
   );
