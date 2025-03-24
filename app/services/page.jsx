@@ -121,13 +121,19 @@ export default function ServicesPage() {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
-                loading={service.id === 1 ? "eager" : "lazy"}  // Load the first one eagerly
-                width={600}
-                height={400}
+                loading={service.id === 1 ? "eager" : "lazy"}
+                width={600}  // Actual size of the image
+                height={400}  // Actual size of the image
                 decoding="async"
-                quality={60}  // Reduce quality for faster loading
+                quality={60}  // Lower quality for smaller file size
                 priority={service.id === 1}  // Prioritize the first image
                 aria-label={`Image representing ${service.title}`}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                srcSet={`${service.image}?w=320&h=213 320w, 
+                        ${service.image}?w=480&h=320 480w, 
+                        ${service.image}?w=640&h=426 640w, 
+                        ${service.image}?w=800&h=533 800w, 
+                        ${service.image}?w=1200&h=800 1200w`}
               />
             </div>
 

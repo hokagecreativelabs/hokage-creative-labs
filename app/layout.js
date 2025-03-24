@@ -15,6 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" as="image" href="/optimized/itl-600.webp" />
+        <link rel="preload" as="image" href="/optimized/MP-600.webp" />
+        <link rel="preload" as="image" href="/optimized/daylee-600.webp" />
+        <link rel="preload" as="image" href="/optimized/kings-600.webp" />
         <link
           rel="preload"
           href="/fonts/Nohemi-Regular.woff"
