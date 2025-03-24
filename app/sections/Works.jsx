@@ -73,7 +73,7 @@ const WorksSection = () => {
                   </a>
                 </Link>
                 
-                <div className="p-6 bg-white dark:bg-gray-900">
+                <div className="p-6 bg-white">
                   {/* Title + See Details Link (Flexed) */}
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="font-vastago text-xl sm:text-2xl font-semibold">{work.title}</h3>
@@ -85,7 +85,7 @@ const WorksSection = () => {
                     {work.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-4 py-2 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-nohemi"
+                        className="px-4 py-2 bg-gray-200 text-black rounded-full text-xs sm:text-sm font-nohemi"
                       >
                         {tag}
                       </span>
