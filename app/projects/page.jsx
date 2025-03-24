@@ -9,9 +9,9 @@ const projects = [
   { id: 1, title: "Mfon Usoro Books", slug: "mfon-usoro-books", category: "Web Development", image: "/images/MP.webp" },
   { id: 2, title: "The Oladayo Akinmokun", slug: "the-oladayo-akinmokun", category: "Web Development", image: "/images/daylee.webp" },
   { id: 3, title: "The ITL Conference", slug: "itl-conference", category: "Web Development", image: "/images/itl.webp" },
-  { id: 4, title: "Party Deal Catering", slug: "party-deal", category: "Branding", image: "/images/partyy.png" },
-  { id: 5, title: "Hokage Creative Labs", slug: "hokage-creative", category: "Branding", image: "/images/hoka.png" },
-  { id: 6, title: "Asake Foods", slug: "asake-foods", category: "Branding", image: "/images/asake-foods.jpg" },
+  { id: 4, title: "Party Deal Catering", slug: "party-deal", category: "Branding", image: "/images/partyy.webp" },
+  { id: 5, title: "Hokage Creative Labs", slug: "hokage-creative", category: "Branding", image: "/images/hoka.webp" },
+  { id: 6, title: "Asake Foods", slug: "asake-foods", category: "Branding", image: "/images/asake-foods.webp" },
 ];
 
 const categories = ["All", "Branding", "UI/UX", "Web Development"];
