@@ -120,7 +120,6 @@ const Hero = () => {
             height={338}
             alt="Mobile Static Image"
             className="rounded-[24px]"
-            priority
           />
         ) : (
           <div className="hidden lg:block">

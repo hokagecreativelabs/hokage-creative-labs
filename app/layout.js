@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <title>Hokage Creative Labs</title>
       <Head>
         <title>{SEO.title}</title>
         <meta name="description" content={SEO.description} />
