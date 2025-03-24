@@ -2,6 +2,7 @@
 import { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Lazy load the ServiceCard component
 const ServiceCard = lazy(() => import("../components/ui/ServiceCard"));
@@ -82,7 +83,7 @@ export default function ServicesPage() {
         className="relative h-32 md:h-48 flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
       >
-        <h1 className="text-black text-[56px] md:text-[96px] font-vastago">
+        <h1 className="text-black text-4xl md:text-7xl font-vastago">
           Our Services
         </h1>
       </div>
@@ -103,11 +104,13 @@ export default function ServicesPage() {
           >
             {/* Service Image */}
             <div className="relative w-full h-64">
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                width={600}
+                height={400}
                 aria-label={`Image representing ${service.title}`}
               />
             </div>
@@ -124,6 +127,7 @@ export default function ServicesPage() {
                 <button
                   className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple transition duration-300"
                   aria-label={`View details about ${service.title}`}
+                  role="button"
                 >
                   View Details →
                 </button>

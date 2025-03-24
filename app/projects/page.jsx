@@ -93,11 +93,7 @@ export default function ProjectsPage() {
       >
         {filteredProjects.map((project) => (
           <motion.div key={project.id} className="bg-white shadow-lg rounded-lg overflow-hidden" whileHover={{ scale: 1.03 }}>
-            <picture>
-              <source srcSet={`${project.image.large}`} media="(min-width: 1280px)" />
-              <source srcSet={`${project.image.medium}`} media="(min-width: 640px)" />
-              <img src={project.image.small} alt={`Project - ${project.title}`} loading="lazy" className="w-full h-64 object-cover" />
-            </picture>
+            <img src={project.image} alt={`Project - ${project.title}`} className="w-full h-64 object-cover" />
             <div className="p-6">
               <h2 className="text-2xl font-vastago">{project.title}</h2>
               <p className="text-sm text-gray-500 font-nohemi">{project.category}</p>
