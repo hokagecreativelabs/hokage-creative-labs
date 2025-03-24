@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
@@ -7,13 +8,15 @@ const Footer = () => {
             <div className="w-full max-w-[1248px] mx-auto flex flex-col md:flex-row items-start justify-between gap-8 rounded-[32px] border border-gray-600 p-8">
                 {/* Left Side (Logo) */}
                 <div className="w-full md:w-[298px] h-[208px] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-gray-600">
-                    <img 
-                        src="/images/footer-logo.webp" 
-                        alt="Logo" 
-                        className="h-auto w-auto max-h-[40px] object-contain" 
+                    <Image
+                        src="/images/footer-logo.webp"
+                        alt="Logo"
+                        width={100}     // Explicit width
+                        height={40}     // Explicit height
+                        className="h-auto w-auto max-h-[40px] object-contain"
+                        priority       // To preload and improve performance
                     />
                 </div>
-
 
                 {/* Right Side (Content) */}
                 <div className="w-full md:w-[950px] flex flex-col justify-between">
@@ -39,9 +42,9 @@ const Footer = () => {
 
                         {/* Bottom Center (Social Icons) */}
                         <div className="flex gap-6 mt-2 md:mt-0">
-                            {/* <FaFacebook className="text-white text-xl cursor-pointer" />
+                            <FaFacebook className="text-white text-xl cursor-pointer" />
                             <FaInstagram className="text-white text-xl cursor-pointer" />
-                            <FaTwitter className="text-white text-xl cursor-pointer" /> */}
+                            <FaTwitter className="text-white text-xl cursor-pointer" />
                             <FaEnvelope className="text-white text-xl cursor-pointer" />
                         </div>
 

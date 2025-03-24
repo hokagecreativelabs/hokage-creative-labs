@@ -58,6 +58,8 @@ const AboutSection = () => {
             width={68}
             height={68}
             className="transition-transform duration-700 ease-out"
+            style={{ maxWidth: "100%", height: "auto" }}
+            priority={false} // Ensure it doesn't block other critical resources
           />
         </div>
 

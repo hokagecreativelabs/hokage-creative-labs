@@ -1,32 +1,43 @@
 "use client";
+import { memo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
 
-const ServiceCard = ({ title, description, image, slug }) => {
+const ServiceCard = memo(({ title, description, image, slug }) => {
   return (
     <motion.div
-      className="bg-white shadow-lg rounded-lg overflow-hidden"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
     >
-      <img className="w-full h-48 object-cover" src={image} alt={title} />
+      {/* Service Image */}
+      <div className="relative w-full h-64">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          aria-label={`Service: ${title}`}
+        />
+      </div>
 
-      <div className="p-6">
-        {/* Title + See Details Link (Flexed) */}
-        <div className="flex justify-between items-center mb-2">
-          <h2 className="text-xl font-semibold">{title}</h2>
-        </div>
+      {/* Service Content */}
+      <div className="p-3">
+        <h2 className="text-2xl font-semibold mb-4 font-vastago">{title}</h2>
+        <p className="text-md font-nohemi tracking-wide">{description}</p>
 
-        <p className="text-gray-600">{description}</p>
-        <Link href={`/services/${slug}`} className="mt-4 text-sm flex items-center text-purple underline hover:text-lemon transition duration-300">
-          See Details <FaArrowRight className="ml-1 text-lemon" />
+        {/* CTA to View Details Page */}
+        <Link href={`/services/${slug}`}>
+          <button
+            className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple"
+            aria-label={`Learn more about ${title}`}
+          >
+            View Details →
+          </button>
         </Link>
       </div>
     </motion.div>
   );
-};
+});
 
 export default ServiceCard;
