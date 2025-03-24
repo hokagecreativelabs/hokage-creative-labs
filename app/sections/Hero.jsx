@@ -80,11 +80,12 @@ const Hero = () => {
             Request a Quote
             <Image
               src="/images/right-arrow.webp"
+              alt="Call Icon"
               width={24}
               height={24}
-              alt="Arrow Icon"
-              priority
+              className="flex-shrink-0"
             />
+
           </button>
         )}
 

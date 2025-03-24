@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
+import "swiper/css/autoplay";
 
 const Carousel = ({ images }) => {
   return (
@@ -14,10 +15,12 @@ const Carousel = ({ images }) => {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[Autoplay]}
         slidesPerView={Math.min(images.length, 3)}
+        className="carousel"
+        aria-label="Image Carousel"
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="w-[600px] h-[338px] rounded-[24px] border border-gray-300 overflow-hidden">
+          <SwiperSlide key={index} className="slide">
+            <div className="w-[600px] h-[338px] rounded-[24px] border border-gray-300 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
               <Image
                 src={image}
                 width={600}
@@ -25,6 +28,7 @@ const Carousel = ({ images }) => {
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                aria-hidden="true"
               />
             </div>
           </SwiperSlide>

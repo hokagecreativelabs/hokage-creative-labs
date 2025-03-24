@@ -15,6 +15,20 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          href="/fonts/Nohemi-Regular.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/VastagoGrotesk-Regular.otf"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />
