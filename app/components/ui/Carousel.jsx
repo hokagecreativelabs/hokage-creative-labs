@@ -16,7 +16,6 @@ const Carousel = ({ images }) => {
         modules={[Autoplay]}
         slidesPerView={Math.min(images.length, 3)}
         className="carousel"
-        aria-label="Image Carousel"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="slide">
