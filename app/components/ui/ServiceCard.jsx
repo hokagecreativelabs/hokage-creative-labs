@@ -32,7 +32,7 @@ const ServiceCard = memo(({ title, description, image, slug }) => {
             className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple"
             aria-label={`Learn more about ${title}`}
           >
-            View Details →
+            View Details  →
           </button>
         </Link>
       </div>
