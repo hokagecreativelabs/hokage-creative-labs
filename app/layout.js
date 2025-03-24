@@ -14,11 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Web Development Agency" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="/optimized/itl-600.webp" />
         <link rel="preload" as="image" href="/optimized/MP-600.webp" />
         <link rel="preload" as="image" href="/optimized/daylee-600.webp" />
         <link rel="preload" as="image" href="/optimized/kings-600.webp" />
+        <title>Hokage Creative Labs</title>
         <link
           rel="preload"
           href="/fonts/Nohemi-Regular.woff"
