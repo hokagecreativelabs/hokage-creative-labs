@@ -56,7 +56,7 @@ const serviceDetails = {
           "tier": "Basic",
           "features": ["Landing Page", "Fully Responsive Design", "SEO Optimization (Basic)", "Contact Form"]
         },
-        {
+        {   
           "tier": "Standard",
           "features": ["3-5 Page Website", "Fully Responsive Design", "SEO Optimization (Advanced)", "CMS Integration / Dashboard"]
         },
@@ -166,6 +166,7 @@ export default function ServiceDetails() {
       {/* Back to Services Link */}
       <div className="max-w-5xl mx-auto px-4 md:px-12">
         <button
+          aria-label="View details about services"
           onClick={() => router.push("/services")}
           className="mb-4 inline-flex items-center text-purple hover:text-lemon transition duration-300"
         >

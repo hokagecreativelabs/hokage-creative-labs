@@ -73,6 +73,7 @@ const Hero = () => {
         {showCTA && (
           <button
             type="button"
+            aria-label="Request a Quote"
             onClick={toggleModal}
             className="bg-purple text-white tracking-wide mt-[10px] md:mt-[40px] flex items-center justify-center gap-[8px] w-[191px] h-[56px] border border-[#21083F] rounded-[40px] px-[16px] py-[16px] hover:bg-white hover:text-black transition duration-300 ease-out whitespace-nowrap font-nohemi"
           >
@@ -87,24 +88,41 @@ const Hero = () => {
           </button>
         )}
 
+
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-lg p-6 max-w-lg w-full">
               <h2 className="text-2xl font-bold mb-4">Request a Quote</h2>
               <p className="mb-4">Fill out the form below to get started.</p>
               <form className="space-y-4">
-                <input type="text" placeholder="Your Name" className="w-full p-2 border rounded" />
-                <input type="email" placeholder="Your Email" className="w-full p-2 border rounded" />
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  aria-label="Your Name"
+                  className="w-full p-2 border rounded"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  aria-label="Your Email"
+                  className="w-full p-2 border rounded"
+                />
                 <textarea
                   placeholder="Your Message"
+                  aria-label="Your Message"
                   className="w-full p-2 border rounded h-32"
                 ></textarea>
-                <button type="submit" className="w-full bg-purple text-white py-2 rounded">
+                <button
+                  type="submit"
+                  aria-label="Submit your request"
+                  className="w-full bg-purple text-white py-2 rounded"
+                >
                   Submit
                 </button>
               </form>
               <button
                 onClick={toggleModal}
+                aria-label="Close request form"
                 className="mt-4 px-4 py-2 bg-gray-500 text-white rounded"
               >
                 Close
@@ -120,6 +138,7 @@ const Hero = () => {
             height={338}
             alt="Mobile Static Image"
             className="rounded-[24px]"
+            priority
           />
         ) : (
           <div className="hidden lg:block">

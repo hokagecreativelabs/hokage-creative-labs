@@ -42,7 +42,7 @@ const Navbar = () => {
                             height={40}
                             priority
                             loading="eager"
-                            className="object-contain"
+                            className="object-contain h-auto w-auto"
                         />
                     </Link>
                 </div>
@@ -57,6 +57,8 @@ const Navbar = () => {
                 {/* CTA Button */}
                 <button
                     role="button"
+                    aria-label="Book a Call"
+                    title="Book a Call"
                     onClick={openCalendly}
                     className="hidden md:flex font-medium tracking-relaxed font-nohemi items-center justify-center gap-2 bg-purple text-white w-[150px] h-[56px] px-4 py-4 rounded-full transition duration-300 ease-out hover:bg-white hover:text-purple"
                 >
@@ -73,7 +75,14 @@ const Navbar = () => {
 
                 {/* Mobile Menu Toggle */}
                 <div className="flex md:hidden">
-                    <button role="button" onClick={toggleMobileMenu} className="text-2xl text-gray-800">
+                    <button
+                        role="button"
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                        title={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isMobileMenuOpen}
+                        onClick={toggleMobileMenu}
+                        className="text-2xl text-gray-800"
+                    >
                         {isMobileMenuOpen ? <FiX /> : <FiMenu />}
                     </button>
                 </div>
@@ -89,16 +98,24 @@ const Navbar = () => {
                     <Link href="/about" className="font-nohemi text-[#101928] text-base font-medium">About</Link>
                     <Link href="/services" className="font-nohemi text-[#101928] text-base font-medium">Services</Link>
                     <Link href="/projects" className="font-nohemi text-[#101928] text-base font-medium">Projects</Link>
-                    <button 
-                        role="button" 
+                    <button
+                        role="button"
+                        aria-label="Book a Call"
+                        title="Book a Call"
                         onClick={() => {
                             openCalendly();
                             setIsMobileMenuOpen(false);
-                        }} 
+                        }}
                         className="font-medium tracking-relaxed font-nohemi flex items-center gap-2 bg-purple text-white w-full h-[56px] px-4 py-4 rounded-full"
                     >
                         <span>Book a Call</span>
-                        <Image src="/images/call-icon.webp" alt="Call Icon" width={24} height={24} loading="lazy" />
+                        <Image
+                            src="/images/call-icon.webp"
+                            alt="Call Icon"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                        />
                     </button>
                 </div>
             </div>

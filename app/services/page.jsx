@@ -122,7 +122,7 @@ export default function ServicesPage() {
               {/* CTA to View Details Page */}
               <Link href={`/services/${service.slug}`}>
                 <button
-                  className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple"
+                  className="mt-4 w-full py-3 text-center text-lemon bg-purple rounded-md font-nohemi hover:bg-lemon hover:text-purple transition duration-300"
                   aria-label={`View details about ${service.title}`}
                 >
                   View Details →
