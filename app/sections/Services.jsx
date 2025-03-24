@@ -2,10 +2,8 @@
 import { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 
-// Lazy load the ServiceCard component
 const ServiceCard = lazy(() => import("../components/ui/ServiceCard"));
 
-// Top Services
 const services = [
   {
     title: "Branding",
@@ -69,6 +67,20 @@ const bottomServices = [
   },
 ];
 
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 // Fallback loader component
 const Loader = () => (
   <div className="flex items-center justify-center p-6">
@@ -95,22 +107,12 @@ const ServicesSection = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
           initial="hidden"
           animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
+          variants={containerVariants}
         >
           {services.map((service) => (
-            <ServiceCard
-              key={service.slug} // Use slug as a unique key
-              title={service.title}
-              description={service.description}
-              image={service.image}
-              slug={service.slug}
-            />
+            <motion.div key={service.slug} variants={itemVariants}>
+              <ServiceCard {...service} />
+            </motion.div>
           ))}
         </motion.div>
       </Suspense>
@@ -121,22 +123,12 @@ const ServicesSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           initial="hidden"
           animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
+          variants={containerVariants}
         >
           {bottomServices.map((service) => (
-            <ServiceCard
-              key={service.slug} // Use slug as a unique key
-              title={service.title}
-              description={service.description}
-              image={service.image}
-              slug={service.slug}
-            />
+            <motion.div key={service.slug} variants={itemVariants}>
+              <ServiceCard {...service} />
+            </motion.div>
           ))}
         </motion.div>
       </Suspense>

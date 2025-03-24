@@ -26,7 +26,7 @@ const AboutSection = () => {
             stagger: 0.08,
             scrollTrigger: {
               trigger: el,
-              start: "top 85%", // Trigger earlier
+              start: "top 85%",
               end: "top 40%",
               scrub: true,
             },
@@ -52,13 +52,14 @@ const AboutSection = () => {
       <div className="px-4 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
         {/* Animated Image */}
         <div className="flex justify-start">
-        <Image
-          src="/images/about-icon.webp"
-          alt="Icon"
-          width={68}
-          height={68}
-          className="transition-transform duration-700 ease-out"
-        />
+          <Image
+            src="/images/about-icon.webp"
+            alt="Icon"
+            width={68}
+            height={68}
+            className="transition-transform duration-700 ease-out"
+            priority
+          />
         </div>
 
         {/* Morphing Text 1 */}
