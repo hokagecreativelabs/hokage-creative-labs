@@ -108,7 +108,7 @@ export default function ServicesPage() {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
                 width={600}
                 height={400}
                 aria-label={`Image representing ${service.title}`}
