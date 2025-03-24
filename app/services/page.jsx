@@ -78,15 +78,28 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="relative min-h-screen py-32">
-      {/* Banner with Background Image */}
-      <div
-        className="relative h-32 md:h-48 flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
-      >
-        <h1 className="text-black text-4xl md:text-7xl font-vastago">
-          Our Services
-        </h1>
-      </div>
+  {/* Preload the Background Image */}
+  <link
+    rel="preload"
+    as="image"
+    href="/images/bg-pattern.webp"
+    type="image/webp"
+  />
+  
+  {/* Banner with Optimized Background Image */}
+    <div
+      className="relative h-32 md:h-48 flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/images/bg-pattern.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <h1 className="text-black text-4xl md:text-7xl font-vastago">
+        Our Services
+      </h1>
+    </div>
+
 
       {/* Services Grid */}
       <motion.div
@@ -108,9 +121,12 @@ export default function ServicesPage() {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
-                loading="eager"
+                loading={service.id === 1 ? "eager" : "lazy"}  // Load the first one eagerly
                 width={600}
                 height={400}
+                decoding="async"
+                quality={60}  // Reduce quality for faster loading
+                priority={service.id === 1}  // Prioritize the first image
                 aria-label={`Image representing ${service.title}`}
               />
             </div>
