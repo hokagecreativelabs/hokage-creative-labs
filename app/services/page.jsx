@@ -135,7 +135,7 @@ export default function ServicesPage() {
                         ${service.image}?w=800&h=533 800w, 
                         ${service.image}?w=1200&h=800 1200w`}
               />
-            </div>
+            </div>  
 
             {/* Service Content */}
             <div className="p-6">

@@ -55,7 +55,7 @@ export default function ClientScripts() {
               var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
               s1.async=true;
               s1.src='https://embed.tawk.to/67dd42619b1c5d190de9b5e0/1ims4mjdm';
-              s1.charset='UTF-8';
+              s1.charSet='UTF-8';
               s1.setAttribute('crossorigin','*');
               s0.parentNode.insertBefore(s1,s0);
             })();

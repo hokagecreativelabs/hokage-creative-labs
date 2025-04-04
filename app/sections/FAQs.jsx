@@ -45,7 +45,7 @@ export default function QnASection() {
                 >
                   {/* Question */}
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold">{qna.question}</span>
+                    <span className="text-lg font-md  ">{qna.question}</span>
                     {isActive ? <FiMinus /> : <FiPlus />}
                   </div>
 
@@ -66,36 +66,38 @@ export default function QnASection() {
 
           {/* Right Column */}
           <div className="flex flex-col gap-4">
-            {qnas.slice(3, 6).map((qna, index) => {
-              const isActive = activeIndex === index + 3;
+          {qnas.slice(3, 6).map((qna, index) => {
+  const realIndex = index + 3; // Ensure unique index for the second column
+  const isActive = activeIndex === realIndex;
 
-              return (
-                <div
-                  key={index + 3}
-                  className={`w-full p-6 md:p-8 border rounded-3xl cursor-pointer transition-all duration-300 ${
-                    isActive ? "bg-gray-100" : "h-auto"
-                  }`}
-                  onClick={() => toggleQnA(index + 3)}
-                >
-                  {/* Question */}
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold">{qna.question}</span>
-                    {isActive ? <FiMinus /> : <FiPlus />}
-                  </div>
+  return (
+    <div
+      key={realIndex} // Use realIndex to ensure unique keys
+      className={`w-full p-6 md:p-8 border rounded-3xl cursor-pointer transition-all duration-300 ${
+        isActive ? "bg-gray-100" : "h-auto"
+      }`}
+      onClick={() => toggleQnA(realIndex)} // Use realIndex for toggle
+    >
+      {/* Question */}
+      <div className="flex justify-between items-center">
+        <span className="text-lg font-semibold">{qna.question}</span>
+        {isActive ? <FiMinus /> : <FiPlus />}
+      </div>
 
-                  {/* Animated Answer */}
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <hr className="my-4 border-gray-300" />
-                    <p className="mt-2 text-gray-600">{qna.answer}</p>
-                  </motion.div>
-                </div>
-              );
-            })}
+      {/* Animated Answer */}
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <hr className="my-4 border-gray-300" />
+        <p className="mt-2 text-gray-600">{qna.answer}</p>
+      </motion.div>
+    </div>
+  );
+})}
+
           </div>
         </div>
       </div>

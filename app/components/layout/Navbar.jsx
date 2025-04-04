@@ -64,7 +64,7 @@ const Navbar = () => {
                 >
                     <span className="font-vastago">Book a Call</span>
                     <Image
-                        src="/images/call-icon.webp"
+                        src="/images/call-icon.webp"s
                         alt="Call Icon"
                         width={24}
                         height={24}
